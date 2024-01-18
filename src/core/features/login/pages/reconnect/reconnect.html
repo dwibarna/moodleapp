@@ -19,17 +19,6 @@
                 </ion-item>
             </ion-card>
 
-            <div class="ion-text-wrap ion-text-center core-login-info-box">
-                <div class="core-login-site">
-                    <div class="core-login-site-logo" *ngIf="!showUserAvatar && logoUrl">
-                        <img [src]="logoUrl" role="presentation" onError="this.src='assets/img/login_logo.png'" alt="">
-                    </div>
-
-                    <p *ngIf="siteInfo?.siteName" class="ion-no-margin ion-no-padding core-sitename">
-                        <core-format-text [text]="siteInfo?.siteName" [filter]="false"></core-format-text>
-                    </p>
-                    <p class="core-siteurl" *ngIf="displaySiteUrl">{{site.siteUrl}}</p>
-                </div>
 
                 <div class="core-login-user">
                     <!-- Show user avatar. -->
