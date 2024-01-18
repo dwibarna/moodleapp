@@ -67,7 +67,11 @@ export class AppComponent implements OnInit, AfterViewInit {
             this.removeModeClasses([MOODLE_VERSION_PREFIX, MOODLE_SITE_URL_PREFIX]);
 
             // Go to sites page when user is logged out.
-            await CoreNavigator.navigate('/login/sites', { reset: true });
+            const siteCheck = await CoreSites.checkSite('http://178.128.80.228/KeiLearning-WEB');
+
+            await CoreNavigator.navigate('/login/credentials', {
+                params: { siteCheck },
+            });
 
             if (CoreSitePlugins.hasSitePluginsLoaded) {
                 // Temporary fix. Reload the page to unload all plugins.
